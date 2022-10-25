@@ -86,7 +86,7 @@ ifeq ($(TARGET_PRODUCT), munch)
         CDEFINES += -DCONFIG_TARGET_PRODUCT_MUNCH
 endif
 
-ifeq ($(TARGET_PRODUCT), dagu)
+ifeq ($(CONFIG_ARCH_KONA), y)
         CDEFINES += -DCONFIG_TARGET_PRODUCT_DAGU
 endif
 
@@ -244,17 +244,7 @@ ifeq ($(KERNEL_BUILD), 1)
 	obj-y	+= wcd937x/
 	obj-y	+= wcd938x/
 	obj-y	+= bolero/
-ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), enuma))
 	obj-y	+= cs35l41_k81/
-else ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), elish))
-	obj-y	+= cs35l41_k81/
-else ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), dagu))
-	obj-y	+= cs35l41_k81/
-else ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), munch))
-	obj-y	+= tfa9874/
-else
-	obj-y	+= cs35l41/
-endif
 	obj-y	+= rouleur/
 	obj-y	+= wsa883x/
 	obj-y	+= sdm660_cdc/

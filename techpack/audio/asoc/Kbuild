@@ -229,7 +229,7 @@ ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT),lmi lmiin lmiinpro munch))
 CDEFINES += -DTFA_ADSP_SUPPORTED
 endif
 
-ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT),lmi lmiin lmiinpro cas skuld umi cmi apollo alioth thyme enuma elish psyche munch dagu))
+ifeq ($(CONFIG_ARCH_KONA), y)
 CDEFINES += -DAUDIO_SM8250_FLAG
 endif
 
@@ -261,7 +261,7 @@ ifeq ($(TARGET_PRODUCT), elish)
 		CDEFINES += -DCONFIG_TARGET_PRODUCT_ELISH
 endif
 
-ifeq ($(TARGET_PRODUCT), dagu)
+ifeq ($(CONFIG_ARCH_KONA), y)
 		CDEFINES += -DCONFIG_TARGET_PRODUCT_DAGU
 endif
 

@@ -87,7 +87,7 @@ INCS +=		$(COMMON_INC) \
 
 EXTRA_CFLAGS += $(INCS)
 
-ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), umi cmi urd skuld cas apollo alioth thyme enuma dagu))
+ifeq ($(CONFIG_ARCH_KONA), y)
        CDEFINES += -DCONFIG_AUDIO_SMARTPA_STEREO
 endif
 
@@ -123,12 +123,12 @@ ifeq ($(TARGET_PRODUCT), elish)
 	CDEFINES += -DCONFIG_TARGET_PRODUCT_ELISH
 endif
 
-ifeq ($(TARGET_PRODUCT), dagu)
+ifeq ($(CONFIG_ARCH_KONA), y)
 	CDEFINES += -DCONFIG_TARGET_PRODUCT_DAGU
 endif
 
 # PA STANDBY
-ifeq ($(TARGET_PRODUCT), dagu)
+ifeq ($(CONFIG_ARCH_KONA), y)
 	CDEFINES += -DAUDIO_SMART_PA_STANDBY_SUPPORT
 endif
 
